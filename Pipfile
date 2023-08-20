@@ -8,6 +8,8 @@ jupyterlab = "*"
 pandas = "*"
 tabulate = "*"
 scikit-learn = "*"
+streamlit = "*"
+wikipedia = "*"
 
 [dev-packages]
 
