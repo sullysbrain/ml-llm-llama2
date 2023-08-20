@@ -1,5 +1,5 @@
-Langchain and Llama 2 LLM Creation on AWS
+Building AI LLM App with LangChain, OpenAI, and Llama 2
 
-This project uses SageMaker Studio for Llama 2 deployment, using Amazon's AWS. This is going to be a little bit of a works in progress as I dive into it, as the main focus is exploring SageMaker's capabilities as well as the new version of Llama 2.
+I will be building out a web deployed LLM built with the help of LangChain, using Meta's and Microsoft's Llama 2.0. The initial focus is building LangChain and getting it up and running. The second phase will be switching away from the OpenAI model and using Llama 2.0.
 
-Also interested in potentially including dataiku as part of the pipeline if appropriate.
+Also interested in adding use of SageMaker and DataIku as part of the pipeline if appropriate.
