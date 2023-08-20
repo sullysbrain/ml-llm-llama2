@@ -7,6 +7,7 @@ name = "pypi"
 jupyterlab = "*"
 pandas = "*"
 tabulate = "*"
+scikit-learn = "*"
 
 [dev-packages]
 
