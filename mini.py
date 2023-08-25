@@ -3,14 +3,13 @@ import torch
 
 model = "tiiuae/falcon-7b-instruct"
 tokenizer = AutoTokenizer.from_pretrained(model)
-pipeline = pipeline(
+pipe = pipeline(
     "text-generation",
     model=model,
     tokenizer=tokenizer,
-    torch_dtype=torch.bfloat16,
-    trust_remote_code=True,
-    device_map="auto",
+    trust_remote_code=True
 )
+
 newline_token = tokenizer.encode("\n")[0]
 my_name = "Alice"
 your_name = "Bob"
@@ -20,7 +19,7 @@ while True:
     user_input = input("> ")
     dialog.append(f"{my_name}: {user_input}")
     prompt = "\n".join(dialog) + f"\n{your_name}: "
-    sequences = pipeline(
+    sequences = pipe(
         prompt,
         max_length=500,
         do_sample=True,
