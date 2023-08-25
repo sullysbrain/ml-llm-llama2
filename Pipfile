@@ -11,6 +11,8 @@ scikit-learn = "*"
 streamlit = "*"
 wikipedia = "*"
 torch = "*"
+einops = "*"
+accelerate = "*"
 
 [dev-packages]
 
