@@ -1,33 +1,28 @@
-from transformers import AutoTokenizer, pipeline
-import torch
+# Using Python, import all the json files in the _data folder
+# and merge them into a single file called data.json
 
-model = "tiiuae/falcon-7b-instruct"
-tokenizer = AutoTokenizer.from_pretrained(model)
-pipe = pipeline(
-    "text-generation",
-    model=model,
-    tokenizer=tokenizer,
-    trust_remote_code=True
-)
+import os, json
+import pandas as pd
 
-newline_token = tokenizer.encode("\n")[0]
-my_name = "Alice"
-your_name = "Bob"
-dialog = []
+#path_to_json = '_data/'
+#json_files = [pos_json for pos_json in os.listdir(path_to_json) if pos_json.endswith('.json')]
+#print(json_files)  # for me this prints ['foo.json']
 
-while True:
-    user_input = input("> ")
-    dialog.append(f"{my_name}: {user_input}")
-    prompt = "\n".join(dialog) + f"\n{your_name}: "
-    sequences = pipe(
-        prompt,
-        max_length=500,
-        do_sample=True,
-        top_k=10,
-        num_return_sequences=1,
-        return_full_text=False,
-        eos_token_id=newline_token,
-        pad_token_id=tokenizer.eos_token_id,
-    )
-    print(sequences[0]['generated_text'])
-    dialog.append("Bob: "+sequences[0]['generated_text'])
+
+#with open('data.json', 'w') as f:
+#    json.dump(data, f)
+
+# Now, we can use the data.json file to create a Streamlit app
+# that will allow us to interact with the data.
+
+import streamlit as st
+import json
+
+with open('data.json', 'r') as f:
+    data = json.load(f)
+
+st.title('SullyGPT')
+input = st.text_input('Enter a prompt:')
+if input:
+    text = data[input]
+    st.write(text)

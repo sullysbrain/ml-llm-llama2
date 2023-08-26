@@ -13,6 +13,7 @@ wikipedia = "*"
 torch = "*"
 einops = "*"
 accelerate = "*"
+langchain = "*"
 
 [dev-packages]
 
