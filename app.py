@@ -15,7 +15,6 @@ os.environ['OPENAI_API_KEY'] = api.API_KEY
 # Duckduckgo search
 search = DuckDuckGoSearchRun()
 
-
 # Init the LLM and Tools
 llm = OpenAI(temperature=0)
 tools = load_tools(['wikipedia'], llm=llm)
