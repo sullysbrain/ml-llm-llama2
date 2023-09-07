@@ -15,6 +15,13 @@ einops = "*"
 accelerate = "*"
 langchain = "*"
 duckduckgo-search = "*"
+mlflow = "*"
+openai = "*"
+ipykernel = "*"
+python-dotenv = "*"
+chromadb = "*"
+pypdf = "*"
+tiktoken = "*"
 
 [dev-packages]
 
