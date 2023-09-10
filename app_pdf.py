@@ -15,6 +15,16 @@ os.environ['OPENAI_API_KEY'] = api.API_KEY
 # Duckduckgo search
 search = DuckDuckGoSearchRun()
 
+# Import all PDFs in folder
+import glob
+import re
+
+# Get all PDFs in folder
+path = 'pdfs/'
+pdfs = glob.glob(path + '*.pdf')
+#df = pd.concat([pd.read_csv(file) for file in file_paths], ignore_index=True)
+
+
 # Init the LLM and Tools
 llm = OpenAI(temperature=0)
 tools = load_tools(['wikipedia'], llm=llm)
