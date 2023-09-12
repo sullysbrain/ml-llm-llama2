@@ -11,3 +11,7 @@ As mentioned above, the web interface uses StreamLit running as localhost on my 
 	aws ec2 describe-instances > saved_file.json
 		* this will save the instances as a locally saved .json file
 
+	aws ec2 start-instances --instance-ids <<instance-id>>
+	aws ec2 stop-instances --instance-ids <<instance-id>>
+
+
